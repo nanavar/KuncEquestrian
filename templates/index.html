@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Kunc Equestrian</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid align-items-center">
+    <h2>About us</h2>
+    <div class="container-md">
+        <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is
+            pain..."
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue at lacus in accumsan. Vivamus lacus
+            massa, commodo in dapibus non, iaculis quis risus. Aliquam sodales diam blandit euismod pretium. Integer
+            ultricies aliquet imperdiet. Integer augue metus, volutpat vel lectus sed, fringilla pellentesque felis.
+            Duis
+            eget nisi justo. Praesent mollis porta maximus. Proin in porttitor nunc. Proin ut arcu mi. Nulla pulvinar
+            mauris
+            odio, quis fermentum nibh feugiat eu. Donec sollicitudin dignissim commodo. In interdum erat vel dui
+            venenatis,
+            non tincidunt nunc consectetur. Cras ut rutrum quam. Vivamus eu ex eget mauris tempor suscipit eu vitae
+            justo.
+            Etiam sed nisl varius, pulvinar mi sollicitudin, consequat magna. Suspendisse ac erat in mauris eleifend
+            lobortis vel vitae nisl.
+
+            Etiam efficitur metus neque, ut auctor lacus molestie quis. Maecenas eleifend nisl nec tristique sodales.
+            Morbi
+            metus tellus, finibus eu eleifend condimentum, ullamcorper vitae neque. Nam commodo iaculis ex. Proin ac
+            condimentum ante, id pellentesque nisi. Etiam nec velit eu diam aliquet fringilla eu vitae est. Mauris
+            fringilla
+            facilisis mauris, vitae ultricies ante bibendum ut. Class aptent taciti sociosqu ad litora torquent per
+            conubia
+            nostra, per inceptos himenaeos. In sed enim sagittis, sollicitudin risus et, vehicula tellus. Donec
+            malesuada ut
+            ex ac venenatis. </p>
+    </div>
+</div>
+
+<div class="container-fluid align-items-center text-center">
+    <h2>Current weather</h2>
+
+    <p>Weather description: {{ data.weather[0].description }}</p>
+    <p>Temperature: {{ data.main.temp }} °C</p>
+
+</div>
+
+<div class="container-fluid align-items-center">
+    <h2>Gallery</h2>
+</div>
+{% endblock content %}

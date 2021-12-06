@@ -1,0 +1,152 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    background: black;
+    color: #BEA6A0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 65px;
+    font-weight: bold;
+    color: #BEA6A0;
+    text-shadow: 1px 1px 10px #5E503F, 1px 1px 10px #0A0908;
+    padding-top: 30px;
+}
+
+.title {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar-dark {
+    background: black;
+}
+
+.arena {
+    transform: scale(0.8);
+}
+
+.header {
+    color: white;
+    background: url("/static/img/pic5.jpg");
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 100px;
+}
+
+header. navbar {
+    background-color: #ece2d0;
+}
+
+.header .hero {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 100px;
+}
+
+.header .hero h1 {
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 12vw;
+    font-weight: bold;
+    color: #E5B3A8;
+    text-shadow: 1px 1px 10px #5E503F, 1px 1px 10px #0A0908;
+    padding-top: 30px;
+    margin-bottom: 36px;
+}
+
+.header .hero p {
+    color: #a05d5e;
+    font-size: 22px;
+    max-width: 660px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+}
+
+.btn-secondary {
+    color: #6D2E46;
+    background-color: #bea6a0;
+    border-color: #D5B9B2 !important;
+    outline:none;
+    margin-left: 2px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    transition:0.2s background-color;
+}
+
+.btn-secondary:hover {
+    background-color: #a05d5e;
+}
+
+.nav-link {
+    color: #6d2e46;
+    font-weight: bold;
+}
+
+#login .container #login-row #login-column #login-box {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #4f0113;
+    background-color: #e5dbce;
+}
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+
+.container1 {
+    border: 2px solid #dedede;
+    background-color: #e5dbce;
+    border-radius: 5px;
+    max-width: 1000px;
+    padding: 5px;
+    margin: 10px 0;
+    color: #a05d5e;
+}
+
+.container1::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container1 h4 {
+    color: #503b3b;
+    font-size: 27px;
+}
+
+.time {
+    float: right;
+    color: #BEA6A0;
+}
+
+.message-link {
+    color: #BEA6A0;
+}
+
+.message-link:hover {
+    color: #e5dbce;
+}
+
+.message-box {
+    border: 2px solid #dedede;
+    background-color: #e5dbce;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    max-width: 500px;
+    color: #a05d5e;
+}
+
+h3 {
+    color: #503b3b;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.form-control {
+    font-size: 20px;
+    color: #503b3b;
+}

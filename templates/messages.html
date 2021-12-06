@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Member Lounge</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid align-items-center">
+    <h2>Members lounge</h2>
+    <br>
+    <div class="row">
+        <div class="col-8">
+            <div class="container-sm">
+                {% for message in messages.items %}
+                <div class="container1 justify-content-center">
+                    <h4>{{ message.name }}</h4>
+                    <p>{{ message.text }}</p>
+                    <span class="time">0:00</span>
+                </div>
+                {% endfor %}
+                <p>
+                    {% for page_num in range(messages.pages) %}
+                    <a href="/?page={{ page_num+1 }}" class="message-link">Page {{ page_num }}</a>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="message-box text-center">
+                <h3>Message form</h3>
+                <br>
+                <form id="messages-form" class="form" action="/add-message" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Enter your name" class="form-control">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Enter your message" class="form-control"></textarea>
+                    </div>
+                    <br>
+                    <button class="btn btn-secondary" type="submit">Send message</button>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

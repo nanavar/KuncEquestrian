@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+    {% endblock title %}
+    <link rel="icon" class="logo" type="image/x-icon">
+
+    <!-- css files -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Quicksand&display=swap"
+          rel="stylesheet">
+
+    <!-- Javascript files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+</head>
+
+<body>
+<div class="header">
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">
+                <img src="/static/img/logo.png" alt="" width="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/horses">Our horses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/messages">Members lounge</a>
+                    </li>
+                </ul>
+            </div>
+            <form class="d-flex">
+                <a class="btn btn-secondary" href="/login" type="button">LOG-IN</a>
+            </form>
+        </div>
+    </nav>
+    <div class="hero">
+        <h1>Kunc Equesterian</h1>
+    </div>
+</div>
+
+{% block content %}
+{% endblock content %}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
