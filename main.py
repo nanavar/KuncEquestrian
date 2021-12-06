@@ -12,7 +12,7 @@ app = Flask(__name__)
 db.create_all()
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
     session_token = request.cookies.get("session_token")
     city = "Ljubljana"
@@ -30,7 +30,7 @@ def index():
     return render_template("index.html", user=user, data=data.json())
 
 
-@app.route("/login", methods=["POST", "GET"])
+@app.route("/login", methods=["POST"])
 def login():
     name = request.form.get("user-name")
     email = request.form.get("user-email")
