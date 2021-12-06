@@ -12,7 +12,7 @@ app = Flask(__name__)
 db.create_all()
 
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def index():
     session_token = request.cookies.get("session_token")
     city = "Ljubljana"
@@ -35,24 +35,24 @@ def login():
     name = request.form.get("user-name")
     email = request.form.get("user-email")
     password = request.form.get("user-password")
-    # hashed_password = hashlib.sha256(password.encode()).hexdigest()
+    hashed_password = hashlib.sha256(password.encode()).hexdigest()
 
     user = db.query(User).filter_by(email=email).first()
 
     if not user:
-        user = User(name=name, email=email, password=password)
+        user = User(name=name, email=email, password=hashed_password)
         db.session.add(user)
         db.session.commit()
 
-    # if hashed_password != user.password:
-    # return "WRONG PASSWORD"
+    if hashed_password != user.password:
+        return "WRONG PASSWORD"
 
     session_token = str(uuid.uuid4())
     user.session_token = session_token
     db.session.add(user)
     db.session.commit()
 
-    response = make_response(redirect(url_for('login')))
+    response = make_response(redirect(url_for('profile')))
     response.set_cookie("session_token", session_token, httponly=True, samesite='strict')
 
     return response
@@ -78,6 +78,18 @@ def add_message():
     db.session.commit()
 
     return redirect("messages")
+
+
+@app.route("/profile", methods=["GET"])
+def profile():
+    session_token = request.cookies.get("session_token")
+
+    user = db.query(User).filter_by(session_token=session_token).first()
+
+    if user:
+        return render_template("profile.html", user=user)
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/horses")

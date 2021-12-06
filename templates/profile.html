@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Horses</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid align-items-center">
+    <h2>Your profile</h2>
+    <ul class="align-items-center">
+        <b>NAME: </b> {{ user.name }}
+        <br>
+        <b>EMAIL: </b> {{ user.email }}
+    </ul>
+    <a href="/messages">Members lounge</a>
+</div>
+
+{% endblock content %}
