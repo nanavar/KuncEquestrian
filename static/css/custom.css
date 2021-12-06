@@ -84,16 +84,14 @@ header. navbar {
     font-weight: bold;
 }
 
-#login .container #login-row #login-column #login-box {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    max-width: 600px;
-    height: 320px;
-    border: 1px solid #4f0113;
+.login-box {
+    border: 2px solid #dedede;
     background-color: #e5dbce;
-}
-#login .container #login-row #login-column #login-box #login-form {
-    padding: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    max-width: 500px;
+    color: #a05d5e;
 }
 
 .container1 {
@@ -184,5 +182,38 @@ h4 {
 }
 
 .btn-primary:hover {
+    background-color: #a05d5e;
+}
+
+.btn-main{
+    color: #6D2E46;
+    font-size: 20px;
+    background-color: #bea6a0;
+    border-color: #D5B9B2 !important;
+    outline:none;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 10px 15px;
+    transition:0.2s background-color;
+}
+
+.btn-main:hover {
+    background-color: #a05d5e;
+}
+
+.btn-login{
+float: right;
+    color: #6D2E46;
+    font-size: 20px;
+    background-color: #bea6a0;
+    border-color: #D5B9B2 !important;
+    outline:none;
+    margin-top: 10px;
+    padding: 10px 15px;
+    transition:0.2s background-color;
+}
+
+.btn-login:hover {
     background-color: #a05d5e;
 }
