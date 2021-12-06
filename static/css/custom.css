@@ -150,3 +150,39 @@ h3 {
     font-size: 20px;
     color: #503b3b;
 }
+
+.profile-box {
+    border: 2px solid #dedede;
+    background-color: #e5dbce;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    max-width: 400px;
+    color: #a05d5e;
+}
+
+.profile-box img {
+    float: left;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 31px;
+}
+
+.btn-primary {
+    color: #6D2E46;
+    font-size: 25px;
+    background-color: #bea6a0;
+    border-color: #D5B9B2 !important;
+    outline:none;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 10px 15px;
+    transition:0.2s background-color;
+}
+
+.btn-primary:hover {
+    background-color: #a05d5e;
+}
