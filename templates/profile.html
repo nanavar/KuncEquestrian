@@ -5,14 +5,12 @@
 {% endblock title %}
 
 {% block content %}
-<div class="container-fluid align-items-center">
+<div class="container-fluid align-items-center text-center">
     <h2>Your profile</h2>
-    <ul class="align-items-center">
-        <b>NAME: </b> {{ user.name }}
-        <br>
-        <b>EMAIL: </b> {{ user.email }}
-    </ul>
+    <b>NAME: </b> {{ user.name }}
+    <br>
+    <b>EMAIL: </b> {{ user.email }}
+    <br>
     <a href="/messages">Members lounge</a>
 </div>
-
 {% endblock content %}

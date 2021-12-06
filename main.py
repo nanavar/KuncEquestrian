@@ -30,29 +30,35 @@ def index():
     return render_template("index.html", user=user, data=data.json())
 
 
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     name = request.form.get("user-name")
     email = request.form.get("user-email")
     password = request.form.get("user-password")
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
+    # hashed_password = hashlib.sha256(password.encode()).hexdigest()
 
     user = db.query(User).filter_by(email=email).first()
 
     if not user:
-        user = User(name=name, email=email, password=hashed_password)
+        user = User(name=name, email=email, password=password)
         db.session.add(user)
         db.session.commit()
 
-    if hashed_password != user.password:
-        return "WRONG PASSWORD"
+    # if hashed_password != user.password:
+    # return "WRONG PASSWORD"
 
     session_token = str(uuid.uuid4())
     user.session_token = session_token
     db.session.add(user)
     db.session.commit()
 
-    response = make_response(redirect(url_for('profile')))
+    if request.method == 'GET':
+        if user:
+            return render_template('login.html', user=user)
+        else:
+            return redirect(url_for('index'))
+
+    response = make_response(redirect(url_for("profile")))
     response.set_cookie("session_token", session_token, httponly=True, samesite='strict')
 
     return response
@@ -89,7 +95,7 @@ def profile():
     if user:
         return render_template("profile.html", user=user)
     else:
-        return redirect(url_for("login"))
+        return redirect(url_for("index"))
 
 
 @app.route("/horses")
