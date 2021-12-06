@@ -30,7 +30,7 @@ def index():
     return render_template("index.html", user=user, data=data.json())
 
 
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=["POST", "GET"])
 def login():
     name = request.form.get("user-name")
     email = request.form.get("user-email")
